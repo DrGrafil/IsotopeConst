@@ -231,7 +231,7 @@ bool ReadAtomicMass(std::string FilePath) {
             std::stod(columns[20]),
             std::stod(columns[21])
         ));
-        
+        PrintIsotopeInfo(IsotopeData.back());
 	}
     PrintIsotopeInfo(IsotopeData[0] );
     std::cout << "Size of isotope database:" << IsotopeData.size() << std::endl;

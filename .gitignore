@@ -1,3 +1,8 @@
+#directories
+/project/vs2017/.vs
+/project/vs2017/Debug
+/project/vs2017/Release
+
 # Prerequisites
 *.d
 
@@ -30,3 +35,5 @@
 *.exe
 *.out
 *.app
+*.ipch
+project/vs2017/.vs/EGXAtom/v15/ipch/f70d5e481fba5a10.ipch

@@ -18,10 +18,16 @@
     <ClInclude Include="..\..\..\tests\catch.hpp">
       <Filter>Tests</Filter>
     </ClInclude>
+    <ClInclude Include="AtomicNumberToNameAndSymbol.hpp">
+      <Filter>EGXAtom\AtomicName</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\tests\unitTest.cpp">
       <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EGXAtom\main.cpp">
+      <Filter>EGXAtom</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

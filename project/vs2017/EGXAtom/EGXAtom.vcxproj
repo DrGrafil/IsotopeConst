@@ -148,8 +148,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\tests\catch.hpp" />
+    <ClInclude Include="AtomicNumberToNameAndSymbol.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\EGXAtom\main.cpp" />
     <ClCompile Include="..\..\..\tests\unitTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

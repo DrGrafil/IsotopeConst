@@ -1,33 +1,46 @@
+
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include <fstream>
 #include <stdlib.h>
 #include <cstring>
 #include <stdint.h>
+
+
+#if defined(_WIN32)
+#include <experimental/filesystem> // C++-standard header file name  
+#include <filesystem> // Microsoft-specific implementation header file name  
+using namespace std::experimental::filesystem::v1;
+
+#endif
+
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 struct Isotope;
 
 bool ReadAtomicMass(std::string FilePath);
 
-bool ReadHip( std::string FilePath );
 bool WriteBinaryFile();
-bool ReadBinaryFile();
 
-const int MAX_CHARS_PER_LINE = 124;
-const int MAX_TOKENS_PER_LINE = 124;
-const char* const DELIMITER = "|";
+const int MAX_CHARS_PER_LINE = 200;
+const int LINES_TILL_DATA = 39;
 
 std::vector<Isotope> IsotopeData;
 
 int main(int argc, char** argv) {
-	
-	std::cout << std::ios::binary << std::endl;
-    IsotopeData.reserve(2000000);
+    std::cout << "HELLO" << std::endl;
+
+#if defined(_WIN32)
+    std::cout << std::experimental::filesystem::current_path() << std::endl;
+#endif
+
+    IsotopeData.reserve(20000);
 	//ReadHip("Hip_test.dat");
-	ReadHip("hip_main.dat");
-	WriteBinaryFile();
+    ReadAtomicMass("mass16.txt");
+	//WriteBinaryFile();
+    system("pause");
 	return 0;
 }
 
@@ -108,88 +121,128 @@ struct Isotope
     AtomicMassMantissa(atomicMassMantissa),
     AtomicMassUnc(atomicMassUnc)
     {}
-        
-        
-        
-        
-        
-        
-        int32_t id = 0(), float parallax = 0.0, float rightAscension = 0.0, float Declination = 0.0, float apparentMagnitude = 0.0, float bv = 0.0) :
-		ID( id ),
-		Parallax( parallax ),
-		RA( rightAscension ),
-		DE( Declination ),
-        ApparentMagnitude(apparentMagnitude),
-		BV( bv )
-	{}
 };
 
-void PrintStarInfo( const Star & star )
+void PrintIsotopeInfo( const Isotope & isotope )
 {
-	std::cout 	<< "ID: " << star.ID
+    std::cout << "Symbol:" <<isotope.Symbol << " A:" << isotope.A << " Mass:" << isotope.AtomicMassInteger << " " << isotope.AtomicMassMantissa << std::endl;
+	/*std::cout 	<< "ID: " << star.ID
 				<< " P: " << star.Parallax
 				<< " RA: " << star.RA
 				<< " DE: " << star.DE
 				<< " Mag: " << star.ApparentMagnitude
 				<< " BV: " << star.BV 
-				<< std::endl;
+				<< std::endl; */
 }
 
-bool ReadHip( std::string FilePath )
-{	
+//https://stackoverflow.com/questions/5891610/how-to-remove-certain-characters-from-a-string-in-c
+void removeCharsFromString(std::string &str, char* charsToRemove) {
+    for (unsigned int i = 0; i < strlen(charsToRemove); ++i) {
+        str.erase(std::remove(str.begin(), str.end(), charsToRemove[i]), str.end());
+    }
+}
+
+bool ReadAtomicMass(std::string FilePath) {	
+    std::cout << "In fucntion readatomic mass" << std::endl;
+    //Buffers	
+    char buffer[MAX_CHARS_PER_LINE];
+    std::vector<std::string> columns; // Holds data in columns
+    
+
   	std::ifstream file;
 	file.open( FilePath.c_str() ); // open a file
-  	if ( !file.good() ) 
-    	return 0; // exit if file not found
-    std::cout << Starlist.size() << std::endl;	
+    if (!file.good()) {
+        std::cout << "FILE NOT FOUND" << std::endl;
+        return 0; // exit if file not found
+    }
+    	
+    
+    
+    //Advance pass header:
+    for (int i = 1; i <= LINES_TILL_DATA; i++) {
+        file.getline(buffer, MAX_CHARS_PER_LINE);
+    }
+    std::cout << "done";
     while (!file.eof())
   	{
-  		//Buffers	
-  		char buffer[MAX_CHARS_PER_LINE];
-  		const char* token[MAX_TOKENS_PER_LINE] = {};
   		
+        std::cout << "in";
+        //Clears columns data
+        columns.clear();
+        columns.reserve(24);
+
   		file.getline( buffer, MAX_CHARS_PER_LINE );
   		
-  		int i = 0;
-  		token[i] = std::strtok( buffer, DELIMITER );
-  		
-  		if( token[0] ) // something in line
-  		{
-  			for(i = 1; i < MAX_TOKENS_PER_LINE; ++i)
-  			{
-  				token[i] = strtok( 0, DELIMITER );
-  				if( !token[i] ) break;
-  			}
-  		}
+        //Turn into columns
+        std::string lineData = std::string(buffer);
 
-  		if( atof( token[5] ) > 0 ) // parallax input isnt bad
-  		{
-  			
-  			
-  			Starlist.emplace_back( 	atol( token[1] ), //id
-		  							atof( token[11] ), //paralax
-									atof( token[8] ), // RA
-									atof( token[9] ), //DE
-									atof( token[5] ), // Magnitude
-									atof( token[37] ) // BV
-									);
-		
-		//PrintStarInfo( Starlist.back() );
-		}
+        columns.emplace_back(lineData.substr(0, 1));
+        columns.emplace_back(lineData.substr(1, 3));
+        columns.emplace_back(lineData.substr(4, 5));
+        columns.emplace_back(lineData.substr(9, 5));
+        columns.emplace_back(lineData.substr(14, 5));
+        columns.emplace_back(lineData.substr(19, 1));
+        columns.emplace_back(lineData.substr(20, 3));
+        columns.emplace_back(lineData.substr(23, 4));
+        columns.emplace_back(lineData.substr(27, 1));
+        columns.emplace_back(lineData.substr(28, 13));
+        columns.emplace_back(lineData.substr(41, 11));
+        columns.emplace_back(lineData.substr(52, 11));
+        columns.emplace_back(lineData.substr(63, 9));
+        columns.emplace_back(lineData.substr(72, 1));
+        columns.emplace_back(lineData.substr(73, 2));
+        columns.emplace_back(lineData.substr(75, 11));
+        columns.emplace_back(lineData.substr(86, 9));
+        columns.emplace_back(lineData.substr(95, 1));
+        columns.emplace_back(lineData.substr(96, 3));
+        columns.emplace_back(lineData.substr(99, 1));
+        columns.emplace_back(lineData.substr(100, 12));
+        columns.emplace_back(lineData.substr(112, 11));
+        
+        //Sanatize data:
+        for (auto it = columns.begin(); it != columns.end(); it++) {
+            char removeCharecters[] = "*#";
+            removeCharsFromString(*it, removeCharecters);
+        }
+
+        //Generate Isotope from data
+        IsotopeData.emplace_back(
+        Isotope(
+            columns[0],
+            std::stoi(columns[1]),
+            std::stoi(columns[2]),
+            std::stoi(columns[3]),
+            std::stoi(columns[4]),
+            columns[5],
+            columns[6],
+            columns[7],
+            columns[8],
+            std::stod(columns[9]),
+            std::stod(columns[10]),
+            std::stod(columns[11]),
+            std::stod(columns[12]),
+            columns[13],
+            columns[14],
+            std::stod(columns[15]),
+            std::stod(columns[16]),
+            columns[17],
+            std::stoi(columns[18]),
+            columns[19],
+            std::stod(columns[20]),
+            std::stod(columns[21])
+        ));
+        
 	}
-	PrintStarInfo( Starlist[0] );
+    PrintIsotopeInfo(IsotopeData[0] );
+    std::cout << "Size of isotope database:" << IsotopeData.size() << std::endl;
   	file.close();
   	
   	return 1;
 }
 
 
-bool ReadTyc( std::string FilePath)
-{
-	
-}
 
-
+/*
 bool WriteBinaryFile()
 {
 	
@@ -214,29 +267,5 @@ bool WriteBinaryFile()
     file.close();
 	return 1;
 }
-
-bool ReadBinaryFile()
-{
-	
-    std::ifstream file;
-	file.open ("Star.bin", std::ios::in | std::ios::binary);
-	if(!file.good())
-    {
-    	std::cout << "File Read Error" << std::cout;
-    }
-    /*
-	for(int i = 0; i < Starlist.size(); ++i )
-	{
-		
-		file.write ((char*)&Starlist[i].ID, sizeof(int32_t) ) ;
-		file.write ((char*)&Starlist[i].Parallax, sizeof (float) );
-		file.write ((char*)&Starlist[i].RA, sizeof(double) );
-		file.write ((char*)&Starlist[i].DE, sizeof(double) );
-		file.write ((char*)&Starlist[i].Magnitude, sizeof(float) );
-		
-	}   
-	*/ 	
-    file.close();
-	return 1;
-}
+*/
 

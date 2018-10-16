@@ -2,30 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="EGXAtom">
-      <UniqueIdentifier>{535936c9-7676-410b-894b-5a1dc5adce05}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Tests">
-      <UniqueIdentifier>{a59d9286-d962-45ad-a184-15a24fa610eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EGXAtom\AtomicName">
-      <UniqueIdentifier>{9ec98bea-6525-4227-8531-a7bd9f0c5318}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EGXAtom\NewFilter1">
-      <UniqueIdentifier>{10fa1ae8-13da-4a14-8353-bfd7a3645379}</UniqueIdentifier>
+      <UniqueIdentifier>{cebf6dd2-9c58-4fbe-bd78-8c8052d5851c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\tests\catch.hpp">
-      <Filter>Tests</Filter>
-    </ClInclude>
-    <ClInclude Include="AtomicNumberToNameAndSymbol.hpp">
-      <Filter>EGXAtom\AtomicName</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\tests\unitTest.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\EGXAtom\main.cpp">
       <Filter>EGXAtom</Filter>
     </ClCompile>

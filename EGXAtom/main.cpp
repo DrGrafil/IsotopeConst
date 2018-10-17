@@ -201,11 +201,15 @@ bool ReadAtomicMass(std::string FilePath) {
         
         //Sanatize data:
         for (auto it = columns.begin(); it != columns.end(); it++) {
-            char removeCharecters[] = "*#";
+            char removeCharecters[] = "*# ";
             removeCharsFromString(*it, removeCharecters);
         }
 
         //Generate Isotope from data
+        std::stod(columns[15]); // Issue with null string
+        std::stod(columns[16]);
+        std::stod(columns[20]);
+        std::stod(columns[21]);
         IsotopeData.emplace_back(
         Isotope(
             columns[0],

@@ -6,11 +6,11 @@
 
 
 // List generated from https://www.science.co.il/elements/
-
+// Expanded from https://en.wikipedia.org/wiki/List_of_chemical_elements
 
 /// Array contains all names (first) and symbols (second) for atoms upto atomic number 109 (count of protons). 
 /// Array should be accessed by simply locating item via its atomic number.
-static const std::array<std::pair<std::string,std::string>,110> atomicNameSymbols = {{
+static const std::array<std::pair<std::string,std::string>,119> atomicNameSymbols = {{
 {"Neutron", "n" },
 {"Hydrogen", "H"},
 {"Helium", "He"},
@@ -120,5 +120,15 @@ static const std::array<std::pair<std::string,std::string>,110> atomicNameSymbol
 {"Seaborgium", "Sg"},
 {"Bohrium", "Bh"},
 {"Hassium", "Hs"},
-{"Meitnerium", "Mt"}
+{"Meitnerium", "Mt"},
+{"Darmstadtium", "Ds"}, 
+{"Roentgenium", "Rg"},	
+{"Copernicium", "Cn"},	
+{"Nihonium", "Nh"},	
+{"Flerovium", "Fl"},	
+{"Moscovium", "Mc"},	
+{"Livermorium", "Lv"},	
+{"Tennessine", "Ts"},	
+{"Oganesson", "Og"}	
+
 }};

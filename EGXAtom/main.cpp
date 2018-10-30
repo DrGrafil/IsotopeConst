@@ -7,7 +7,8 @@
 #include <stdlib.h>
 #include <cstring>
 #include <stdint.h>
-
+#include <iomanip>  
+#include "AtomicName/AtomicNumberToNameAndSymbol.hpp"
 
 #if defined(_WIN32)
 #include <experimental/filesystem> // C++-standard header file name  
@@ -22,10 +23,11 @@ struct Isotope;
 
 bool ReadAtomicMass(std::string FilePath);
 
-bool WriteBinaryFile();
+bool WriteCPPHeaderFile();
 
 const int MAX_CHARS_PER_LINE = 200;
 const int LINES_TILL_DATA = 39;
+const int AtomZMax = 110;
 
 std::vector<Isotope> IsotopeData;
 
@@ -39,7 +41,7 @@ int main(int argc, char** argv) {
     IsotopeData.reserve(20000);
 	//ReadHip("Hip_test.dat");
     ReadAtomicMass("mass16.txt");
-	//WriteBinaryFile();
+    WriteCPPHeaderFile();
     system("pause");
 	return 0;
 }
@@ -269,32 +271,115 @@ bool ReadAtomicMass(std::string FilePath) {
   	return 1;
 }
 
+bool CreateIsotopeTable(std::vector<std::vector<Isotope*>> &isotopeTable) {
+    isotopeTable.clear();
+    isotopeTable.resize(200);
 
-
-/*
-bool WriteBinaryFile()
-{
-	
-    std::ofstream file;
-	file.open ("Star.bin", std::ios::out | std::ios::binary);
-    if(!file.good())
-    {
-    	std::cout << "File Write Error";
+    for (auto it = IsotopeData.begin(); it != IsotopeData.end(); it++) {
+        isotopeTable[it->Z].emplace_back(&(*it));
     }
-   // std::cout << sizeof(uint32_t) << " " << sizeof (float) *4 << std::endl;
-	for(int i = 0; i < Starlist.size(); ++i )
-	{
-		
-		file.write ((char*)&Starlist[i].ID, sizeof(uint32_t) ) ;
-		file.write ((char*)&Starlist[i].Parallax, sizeof (float) );
-		file.write ((char*)&Starlist[i].RA, sizeof(float) );
-		file.write ((char*)&Starlist[i].DE, sizeof(float) );
-		file.write ((char*)&Starlist[i].ApparentMagnitude, sizeof(float) );
-		file.write ((char*)&Starlist[i].BV, sizeof(float) );
-		
-	}    	
-    file.close();
-	return 1;
+    return true;
 }
-*/
+
+
+
+
+
+
+
+void CreateDoxygenGroups(std::ofstream &file, std::vector<std::vector<Isotope*>> &isotopeTable) {
+
+    for (int Z = 0; Z < AtomZMax; Z++) {
+
+        auto name = atomicNameSymbols[Z];
+        
+        file << std::endl;
+        file << "/// @defgroup NISTConst-" << name.first << " " << name.first << std::endl;
+        file << "/// @ingroup NISTConst" << std::endl;
+        file << std::endl;
+
+        //Isotopes
+        for (std::vector<Isotope*>::iterator it = (isotopeTable[Z]).begin(); it != (isotopeTable[Z]).end(); it++) {
+
+            file << "///     @defgroup NISTConst-" << name.first << "-" << name.second << (**it).A <<  " " << name.first << " " << (**it).A << std::endl;
+            file << "///     @ingroup NISTConst-" << name.first << std::endl;
+            file << std::endl;
+        }
+
+    }
+}
+
+void CreateConstant(std::ofstream &file, Isotope &isotope, std::string &constName) {
+    int spacePadding = 20;
+
+    file << "ATOMMASSCONST_INT " << constName << isotope.A << "Neutrons = " << std::setw(spacePadding) << isotope.N << std::endl;
+
+
+    /*
+
+    int32_t 		N;                  // Neutrons		                            5       9
+    int32_t 		Z;                  // Protons									5      14
+    int32_t 		A;                  // Atomic Weight							5      19
+    int32_t 		AtomicMassInteger;  // Integer portion of atomic mass           3      99
+    std::string     S6;                 // Space?                                   1     100
+    double          AtomicMassMantissa; // fractional portion of atomic mass x10^6 12     112
+    double          AtomicMassUnc;      // Atomic mass uncertainty x10^6           11     123
+
+    double          MassExc;            // Mass Excess    keV                      13      41
+    double          MassExcUnc;         // Mass Excess Uncertainty keV             11      52
+    double          BindEPerA;          // BINDING ENERGY per A keV                11      63
+    double          BindEPerAUnc;       // BINDING ENERGY per A Uncertainty keV     9      72
+    */
+}
+
+void CreateConstantGroup(std::ofstream &file, std::vector<std::vector<Isotope*>> &isotopeTable) {
+    //Iterate over all proton numbers
+    for (int Z = 0; Z < AtomZMax; Z++) {
+        auto name = atomicNameSymbols[Z];
+
+
+        //Isotopes
+        for (auto it = isotopeTable[Z].begin(); it != isotopeTable[Z].end(); it++) {
+            file << "///     @defgroup NISTConst-" << name.first << "-" << name.second << (**it).A << std::endl;
+
+            
+        }
+
+        /// @} 
+    }
+}
+
+
+bool WriteCPPHeaderFile() {
+    std::vector<std::vector<Isotope*>> isotopeTable;
+    std::ofstream file;
+    
+    file.open("Atom.hpp", std::ios::out);
+    if (!file.good())
+    {
+        std::cout << "File Write Error";
+    }
+
+    file << "#ifdef __cplusplus  //Check if C++" << std::endl;
+    file << "   #ifdef ATOMMASSCONST_PRECXX11" << std::endl;
+    file << "       #define ATOMMASSCONST_INT static const int" << std::endl;
+    file << "       #define ATOMMASSCONST_DOUBLE static const double" << std::endl;
+    file << "   #else" << std::endl;
+    file << "       #define ATOMMASSCONST_INT static constexpr int" << std::endl;
+    file << "       #define ATOMMASSCONST_DOUBLE static constexpr double" << std::endl;
+    file << "   #endif" << std::endl;
+    file << "#else   //For C" << std::endl;
+    file << "   #define ATOMMASSCONST_INT static const int" << std::endl;
+    file << "   #define ATOMMASSCONST_DOUBLE static const double" << std::endl;
+    file << "#endif" << std::endl;
+
+
+
+    CreateIsotopeTable(isotopeTable);
+    CreateDoxygenGroups(file, isotopeTable);
+    CreateConstantGroup(file, isotopeTable);
+
+        
+    return true;
+}
 

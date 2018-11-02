@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\HeaderGenerator\HeaderGenerator.cpp" />
     <ClCompile Include="..\..\HeaderGenerator\IsotopeDataParser.cpp" />
     <ClCompile Include="..\..\HeaderGenerator\main.cpp" />
     <ClCompile Include="..\..\HeaderGenerator\StringManipulators.cpp" />

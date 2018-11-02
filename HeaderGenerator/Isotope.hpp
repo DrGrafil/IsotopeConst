@@ -17,6 +17,7 @@
 // Forward declared dependencies
 #include <string>
 #include <stdint.h>
+#include <iostream>
 //=================================
 //
 
@@ -102,7 +103,7 @@ namespace IsotopeConst
     };
 
 
-    void PrintIsotopeInfo(const Isotope & isotope)
+    inline void PrintIsotopeInfo(const Isotope & isotope)
     {
         std::cout << "Symbol:" << isotope.Symbol << " A:" << isotope.A << " Mass:" << isotope.AtomicMassInteger << " " << isotope.AtomicMassMantissa << std::endl;
         /*std::cout 	<< "ID: " << star.ID

@@ -1,0 +1,28 @@
+var group___isotope_const__potassium =
+[
+    [ "Potassium 32", "db/d31/group___isotope_const-_potassium-_k32.html", "db/d31/group___isotope_const-_potassium-_k32" ],
+    [ "Potassium 33", "dc/ddd/group___isotope_const-_potassium-_k33.html", "dc/ddd/group___isotope_const-_potassium-_k33" ],
+    [ "Potassium 34", "d1/dc1/group___isotope_const-_potassium-_k34.html", "d1/dc1/group___isotope_const-_potassium-_k34" ],
+    [ "Potassium 35", "d1/d9a/group___isotope_const-_potassium-_k35.html", "d1/d9a/group___isotope_const-_potassium-_k35" ],
+    [ "Potassium 36", "dd/d3c/group___isotope_const-_potassium-_k36.html", "dd/d3c/group___isotope_const-_potassium-_k36" ],
+    [ "Potassium 37", "db/ddb/group___isotope_const-_potassium-_k37.html", "db/ddb/group___isotope_const-_potassium-_k37" ],
+    [ "Potassium 38", "de/dcd/group___isotope_const-_potassium-_k38.html", "de/dcd/group___isotope_const-_potassium-_k38" ],
+    [ "Potassium 39", "df/d37/group___isotope_const-_potassium-_k39.html", "df/d37/group___isotope_const-_potassium-_k39" ],
+    [ "Potassium 40", "dd/d2a/group___isotope_const-_potassium-_k40.html", "dd/d2a/group___isotope_const-_potassium-_k40" ],
+    [ "Potassium 41", "de/d14/group___isotope_const-_potassium-_k41.html", "de/d14/group___isotope_const-_potassium-_k41" ],
+    [ "Potassium 42", "d2/dee/group___isotope_const-_potassium-_k42.html", "d2/dee/group___isotope_const-_potassium-_k42" ],
+    [ "Potassium 43", "de/d21/group___isotope_const-_potassium-_k43.html", "de/d21/group___isotope_const-_potassium-_k43" ],
+    [ "Potassium 44", "d6/d9e/group___isotope_const-_potassium-_k44.html", "d6/d9e/group___isotope_const-_potassium-_k44" ],
+    [ "Potassium 45", "d8/d11/group___isotope_const-_potassium-_k45.html", "d8/d11/group___isotope_const-_potassium-_k45" ],
+    [ "Potassium 46", "d5/dee/group___isotope_const-_potassium-_k46.html", "d5/dee/group___isotope_const-_potassium-_k46" ],
+    [ "Potassium 47", "dc/dd0/group___isotope_const-_potassium-_k47.html", "dc/dd0/group___isotope_const-_potassium-_k47" ],
+    [ "Potassium 48", "d5/dd6/group___isotope_const-_potassium-_k48.html", "d5/dd6/group___isotope_const-_potassium-_k48" ],
+    [ "Potassium 49", "d0/df7/group___isotope_const-_potassium-_k49.html", "d0/df7/group___isotope_const-_potassium-_k49" ],
+    [ "Potassium 50", "d3/db8/group___isotope_const-_potassium-_k50.html", "d3/db8/group___isotope_const-_potassium-_k50" ],
+    [ "Potassium 51", "d1/df8/group___isotope_const-_potassium-_k51.html", "d1/df8/group___isotope_const-_potassium-_k51" ],
+    [ "Potassium 52", "d4/d2e/group___isotope_const-_potassium-_k52.html", "d4/d2e/group___isotope_const-_potassium-_k52" ],
+    [ "Potassium 53", "d6/dc1/group___isotope_const-_potassium-_k53.html", "d6/dc1/group___isotope_const-_potassium-_k53" ],
+    [ "Potassium 54", "d8/dd7/group___isotope_const-_potassium-_k54.html", "d8/dd7/group___isotope_const-_potassium-_k54" ],
+    [ "Potassium 55", "dc/d1a/group___isotope_const-_potassium-_k55.html", "dc/d1a/group___isotope_const-_potassium-_k55" ],
+    [ "Potassium 56", "d7/d11/group___isotope_const-_potassium-_k56.html", "d7/d11/group___isotope_const-_potassium-_k56" ]
+];

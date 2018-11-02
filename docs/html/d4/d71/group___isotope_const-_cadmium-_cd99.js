@@ -1,0 +1,12 @@
+var group___isotope_const__cadmium__cd99 =
+[
+    [ "Cadmium99AtomicMass", "d4/d71/group___isotope_const-_cadmium-_cd99.html#ga8178d4914d0b058cf4b620f3e3790b31", null ],
+    [ "Cadmium99AtomicMassUnc", "d4/d71/group___isotope_const-_cadmium-_cd99.html#ga7072b9c8f19ddfd45eb7e52eaa344235", null ],
+    [ "Cadmium99AtomicWeight", "d4/d71/group___isotope_const-_cadmium-_cd99.html#gae57d9936e2651e5b116056cbb75352a9", null ],
+    [ "Cadmium99BindEPerA", "d4/d71/group___isotope_const-_cadmium-_cd99.html#gad08fe99711c4e5ced47b5aee730788aa", null ],
+    [ "Cadmium99BindEPerAUnc", "d4/d71/group___isotope_const-_cadmium-_cd99.html#ga26af7b3fb3e451da19d4f6e93d6225b4", null ],
+    [ "Cadmium99MassExc", "d4/d71/group___isotope_const-_cadmium-_cd99.html#gacd1e4889f197adf8d5d63014fe8d6b89", null ],
+    [ "Cadmium99MassExcUnc", "d4/d71/group___isotope_const-_cadmium-_cd99.html#ga92405a391fea4ecb6b27c4943ea6c51c", null ],
+    [ "Cadmium99Neutrons", "d4/d71/group___isotope_const-_cadmium-_cd99.html#ga234ec942cc9521a32418a244d256c130", null ],
+    [ "Cadmium99Protons", "d4/d71/group___isotope_const-_cadmium-_cd99.html#ga34aed348158cf056816d841c27bd8741", null ]
+];

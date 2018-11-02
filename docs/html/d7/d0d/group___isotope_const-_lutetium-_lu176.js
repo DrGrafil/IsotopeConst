@@ -1,0 +1,12 @@
+var group___isotope_const__lutetium__lu176 =
+[
+    [ "Lutetium176AtomicMass", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#gabc07bdd83514f738a71165db939487d6", null ],
+    [ "Lutetium176AtomicMassUnc", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#gac4ad1ef7aa385702aa9bf8bb5c088ccf", null ],
+    [ "Lutetium176AtomicWeight", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#gad3d9c30056b6e7d6b6882b0d7656cd86", null ],
+    [ "Lutetium176BindEPerA", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#ga9ee514b2a7e62b9c66effdbafb73facb", null ],
+    [ "Lutetium176BindEPerAUnc", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#ga92430b7844276ea22097eb1e0c230cdb", null ],
+    [ "Lutetium176MassExc", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#ga3ec1d5b665255b57d3e3f1377837db5c", null ],
+    [ "Lutetium176MassExcUnc", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#gab3b149d6d16a2cf6c641473b61617bd2", null ],
+    [ "Lutetium176Neutrons", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#ga486402a5ecc2c23c388d7120143b9d74", null ],
+    [ "Lutetium176Protons", "d7/d0d/group___isotope_const-_lutetium-_lu176.html#ga16c9b5e57dd9b9e4b49b7e50fdb9af0a", null ]
+];

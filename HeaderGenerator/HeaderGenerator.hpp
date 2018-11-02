@@ -24,11 +24,14 @@
 namespace IsotopeConst
 {
     bool WriteCPPHeaderFile();
-    bool CreateIsotopeTable(std::vector<std::vector<Isotope*>> &isotopeTable);
+    bool PopulateIsotopeTable(std::vector<std::vector<Isotope*>> &isotopeTable);
 
+    void CreatePreamble(std::ofstream &file);
+    void CreateMacros(std::ofstream &file);
     void CreateDoxygenGroups(std::ofstream &file, std::vector<std::vector<Isotope*>> &isotopeTable);
     void CreateConstantGroup(std::ofstream &file, std::vector<std::vector<Isotope*>> &isotopeTable);
     void CreateConstant(std::ofstream &file, Isotope &isotope, std::string &constName);
+    void CreateFooter(std::ofstream &file);
 } //namespace IsotopeConst
 
 #endif

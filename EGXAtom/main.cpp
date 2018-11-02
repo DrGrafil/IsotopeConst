@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <iomanip>  
 #include "AtomicName/AtomicNumberToNameAndSymbol.hpp"
-
+#include <string>
 #if defined(_WIN32)
 #include <experimental/filesystem> // C++-standard header file name  
 #include <filesystem> // Microsoft-specific implementation header file name  
@@ -294,15 +294,15 @@ void CreateDoxygenGroups(std::ofstream &file, std::vector<std::vector<Isotope*>>
         auto name = atomicNameSymbols[Z];
         
         file << std::endl;
-        file << "/// @defgroup NISTConst-" << name.first << " " << name.first << std::endl;
-        file << "/// @ingroup NISTConst" << std::endl;
+        file << "/// @defgroup AtomMassConst-" << name.first << " " << name.first << std::endl;
+        file << "/// @ingroup AtomMassConst" << std::endl;
         file << std::endl;
 
         //Isotopes
         for (std::vector<Isotope*>::iterator it = (isotopeTable[Z]).begin(); it != (isotopeTable[Z]).end(); it++) {
 
-            file << "///     @defgroup NISTConst-" << name.first << "-" << name.second << (**it).A <<  " " << name.first << " " << (**it).A << std::endl;
-            file << "///     @ingroup NISTConst-" << name.first << std::endl;
+            file << "///     @defgroup AtomMassConst-" << name.first << "-" << name.second << (**it).A <<  " " << name.first << " " << (**it).A << std::endl;
+            file << "///     @ingroup AtomMassConst-" << name.first << std::endl;
             file << std::endl;
         }
 
@@ -310,26 +310,23 @@ void CreateDoxygenGroups(std::ofstream &file, std::vector<std::vector<Isotope*>>
 }
 
 void CreateConstant(std::ofstream &file, Isotope &isotope, std::string &constName) {
-    int spacePadding = 20;
+    int constPad = 30;
+    int namePad = 35;
+    int spacePad = 20;
+    int perc = 15; // double percision
 
-    file << "ATOMMASSCONST_INT " << constName << isotope.A << "Neutrons = " << std::setw(spacePadding) << isotope.N << std::endl;
+    double AtomicMass = isotope.AtomicMassInteger + (isotope.AtomicMassMantissa * 1e-6);
+    double AtomicMassUnc = isotope.AtomicMassUnc * 1e-6;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "Neutrons = " )    << std::right << std::setw(spacePad) << isotope.N <<                                             ";           " << "/**< \f$ \f$ Neutrons in " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "Protons = ")      << std::right << std::setw(spacePad) << isotope.Z <<                                             ";           " << "/**< \f$ \f$ Protons in " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicWeight = ") << std::right << std::setw(spacePad) << isotope.A <<                                             ";           " << "/**< \f$ \f$ Atomic weight of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "MassExc = ")      << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.MassExc <<              ";           " << "/**< \f$ \f$ Mass excess of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "MassExcUnc = ")   << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.MassExcUnc <<           ";           " << "/**< \f$ \f$ Uncertainty in mass excess of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "BindEPerA = ")    << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.BindEPerA <<            ";           " << "/**< \f$ \f$ Binding energy per A of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "BindEPerAUnc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.BindEPerAUnc <<         ";           " << "/**< \f$ \f$ Uncertainty in binding energy per A of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicMass = ")   << std::right << std::setw(spacePad) << std::setprecision(perc) << AtomicMass <<                   ";           " << "/**< \f$ \f$ Atomic mass of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in amu. */" << std::endl;
+    file << std::left << std::setw(constPad) << "   ATOMMASSCONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicMassUnc = ")<< std::right << std::setw(spacePad) << std::setprecision(perc) << AtomicMassUnc <<                ";           " << "/**< \f$ \f$ Uncertainty in atomic mass of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in amu. */" << std::endl;
 
-
-    /*
-
-    int32_t 		N;                  // Neutrons		                            5       9
-    int32_t 		Z;                  // Protons									5      14
-    int32_t 		A;                  // Atomic Weight							5      19
-    int32_t 		AtomicMassInteger;  // Integer portion of atomic mass           3      99
-    std::string     S6;                 // Space?                                   1     100
-    double          AtomicMassMantissa; // fractional portion of atomic mass x10^6 12     112
-    double          AtomicMassUnc;      // Atomic mass uncertainty x10^6           11     123
-
-    double          MassExc;            // Mass Excess    keV                      13      41
-    double          MassExcUnc;         // Mass Excess Uncertainty keV             11      52
-    double          BindEPerA;          // BINDING ENERGY per A keV                11      63
-    double          BindEPerAUnc;       // BINDING ENERGY per A Uncertainty keV     9      72
-    */
 }
 
 void CreateConstantGroup(std::ofstream &file, std::vector<std::vector<Isotope*>> &isotopeTable) {
@@ -340,12 +337,15 @@ void CreateConstantGroup(std::ofstream &file, std::vector<std::vector<Isotope*>>
 
         //Isotopes
         for (auto it = isotopeTable[Z].begin(); it != isotopeTable[Z].end(); it++) {
-            file << "///     @defgroup NISTConst-" << name.first << "-" << name.second << (**it).A << std::endl;
-
+            file << "   /// @addtogroup AtomMassConst-" << name.first << "-" << name.second << (**it).A << std::endl;
+            file << "   /// @{" << std::endl;
+            CreateConstant(file, **it, name.first);
+            file << "   /// @}" << std::endl;
+            file << std::endl;
             
         }
 
-        /// @} 
+        
     }
 }
 

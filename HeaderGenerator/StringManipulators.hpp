@@ -22,8 +22,8 @@
 
 namespace IsotopeConst
 {
-    void StringToInt(std::string & str);
-    void StringToDouble(std::string & str);
+    int StringToInt(std::string & str);
+    double StringToDouble(std::string & str);
     void removeCharsFromString(std::string &str, char* charsToRemove);
 } //namespace IsotopeConst
 

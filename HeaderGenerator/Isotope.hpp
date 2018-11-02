@@ -100,6 +100,21 @@ namespace IsotopeConst
             AtomicMassUnc(atomicMassUnc)
         {}
     };
+
+
+    void PrintIsotopeInfo(const Isotope & isotope)
+    {
+        std::cout << "Symbol:" << isotope.Symbol << " A:" << isotope.A << " Mass:" << isotope.AtomicMassInteger << " " << isotope.AtomicMassMantissa << std::endl;
+        /*std::cout 	<< "ID: " << star.ID
+        << " P: " << star.Parallax
+        << " RA: " << star.RA
+        << " DE: " << star.DE
+        << " Mag: " << star.ApparentMagnitude
+        << " BV: " << star.BV
+        << std::endl; */
+    }
 } //namespace IsotopeConst
+
+
 
 #endif

@@ -1,5 +1,7 @@
 #include "StringManipulators.hpp"
 
+#include <algorithm>
+
 namespace IsotopeConst
 {
     int StringToInt(std::string & str) {

@@ -34,7 +34,7 @@ namespace IsotopeConst
         int32_t  		NMinusZ;            // Neutrons minus protons					3       4
         int32_t 		N;                  // Neutrons		                            5       9
         int32_t 		Z;                  // Protons									5      14
-        int32_t 		A;                  // Atomic Weight							5      19
+        int32_t 		A;                  // Mass number  							5      19
         std::string     S2;                 // Space?                                   1      20 
         std::string     Symbol;             // Element Symbol                           3      23
         std::string     O;                  // O? reaction?                             4      27 

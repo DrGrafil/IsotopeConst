@@ -1,0 +1,27 @@
+var group___isotope_const__argon =
+[
+    [ "Argon 30", "group___isotope_const-_argon-_ar30.html", "group___isotope_const-_argon-_ar30" ],
+    [ "Argon 31", "group___isotope_const-_argon-_ar31.html", "group___isotope_const-_argon-_ar31" ],
+    [ "Argon 32", "group___isotope_const-_argon-_ar32.html", "group___isotope_const-_argon-_ar32" ],
+    [ "Argon 33", "group___isotope_const-_argon-_ar33.html", "group___isotope_const-_argon-_ar33" ],
+    [ "Argon 34", "group___isotope_const-_argon-_ar34.html", "group___isotope_const-_argon-_ar34" ],
+    [ "Argon 35", "group___isotope_const-_argon-_ar35.html", "group___isotope_const-_argon-_ar35" ],
+    [ "Argon 36", "group___isotope_const-_argon-_ar36.html", "group___isotope_const-_argon-_ar36" ],
+    [ "Argon 37", "group___isotope_const-_argon-_ar37.html", "group___isotope_const-_argon-_ar37" ],
+    [ "Argon 38", "group___isotope_const-_argon-_ar38.html", "group___isotope_const-_argon-_ar38" ],
+    [ "Argon 39", "group___isotope_const-_argon-_ar39.html", "group___isotope_const-_argon-_ar39" ],
+    [ "Argon 40", "group___isotope_const-_argon-_ar40.html", "group___isotope_const-_argon-_ar40" ],
+    [ "Argon 41", "group___isotope_const-_argon-_ar41.html", "group___isotope_const-_argon-_ar41" ],
+    [ "Argon 42", "group___isotope_const-_argon-_ar42.html", "group___isotope_const-_argon-_ar42" ],
+    [ "Argon 43", "group___isotope_const-_argon-_ar43.html", "group___isotope_const-_argon-_ar43" ],
+    [ "Argon 44", "group___isotope_const-_argon-_ar44.html", "group___isotope_const-_argon-_ar44" ],
+    [ "Argon 45", "group___isotope_const-_argon-_ar45.html", "group___isotope_const-_argon-_ar45" ],
+    [ "Argon 46", "group___isotope_const-_argon-_ar46.html", "group___isotope_const-_argon-_ar46" ],
+    [ "Argon 47", "group___isotope_const-_argon-_ar47.html", "group___isotope_const-_argon-_ar47" ],
+    [ "Argon 48", "group___isotope_const-_argon-_ar48.html", "group___isotope_const-_argon-_ar48" ],
+    [ "Argon 49", "group___isotope_const-_argon-_ar49.html", "group___isotope_const-_argon-_ar49" ],
+    [ "Argon 50", "group___isotope_const-_argon-_ar50.html", "group___isotope_const-_argon-_ar50" ],
+    [ "Argon 51", "group___isotope_const-_argon-_ar51.html", "group___isotope_const-_argon-_ar51" ],
+    [ "Argon 52", "group___isotope_const-_argon-_ar52.html", "group___isotope_const-_argon-_ar52" ],
+    [ "Argon 53", "group___isotope_const-_argon-_ar53.html", "group___isotope_const-_argon-_ar53" ]
+];

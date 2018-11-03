@@ -85,10 +85,10 @@ namespace IsotopeConst
         file << "/// " << std::endl;
         file << "/// IsotopeConst contains a total of 30,924 constants for 3436 Isotopes up to and including Oganesson (119)" << std::endl; // 9* 3436 isotopes
         file << "/// This library provides access to the current set of constants in the 2016 Atomic Mass Evaluation." << std::endl;
-        file << "/// Isotope data on neutron count, proton count, atomic weight, atomic mass, mass excess and " << std::endl;
-        file << "/// binding energer per A is constained within along with uncertainties. Note that data is not" << std::endl;
+        file << "/// Isotope data on neutron count, proton count, mass number, atomic mass, mass excess and " << std::endl;
+        file << "/// binding energy per nucleon is constained within along with uncertainties. Note that data is not" << std::endl;
         file << "/// a one to one conversion found in the Atomic Mass Evaluation due to numbers being rounded" << std::endl;
-        file << "/// due to floating point conversion. Furthermore unavaliable/incomplete data is set to -1." << std::endl;
+        file << "/// due to floating point conversion." << std::endl;
         file << "///" << std::endl;
         file << "/// See https://doi.org/10.1088/1674-1137/41/3/030003" << std::endl;
         file << "///" << std::endl;
@@ -111,7 +111,10 @@ namespace IsotopeConst
         file << "//=================================" << std::endl;
         file << "// MACRO Definitions" << std::endl;
         file << std::endl;
-        file << "/// @addtogroup IsotopeConst-Macros" << std::endl;
+        file << "/// @defgroup IsotopeConst-Macros Macros" << std::endl;
+        file << "/// @ingroup IsotopeConst" << std::endl;
+        file << std::endl;
+        file << "/// @addtogroup IsotopeConst-Macros Macros" << std::endl;
         file << "/// @{" << std::endl;
         file << std::endl;
         file << "/**" << std::endl;
@@ -215,15 +218,15 @@ namespace IsotopeConst
 
         double AtomicMass = isotope.AtomicMassInteger + (isotope.AtomicMassMantissa * 1e-6);
         double AtomicMassUnc = isotope.AtomicMassUnc * 1e-6;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "Neutrons = ") << std::right << std::setw(spacePad) << isotope.N << ";           " << "/**< \f$ \f$ Neutrons in " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "Protons = ") << std::right << std::setw(spacePad) << isotope.Z << ";           " << "/**< \f$ \f$ Protons in " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicWeight = ") << std::right << std::setw(spacePad) << isotope.A << ";           " << "/**< \f$ \f$ Atomic weight of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "MassExc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.MassExc << ";           " << "/**< \f$ \f$ Mass excess of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "MassExcUnc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.MassExcUnc << ";           " << "/**< \f$ \f$ Uncertainty in mass excess of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "BindEPerA = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.BindEPerA << ";           " << "/**< \f$ \f$ Binding energy per A of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "BindEPerAUnc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.BindEPerAUnc << ";           " << "/**< \f$ \f$ Uncertainty in binding energy per A of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicMass = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << AtomicMass << ";           " << "/**< \f$ \f$ Atomic mass of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in amu. */" << std::endl;
-        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicMassUnc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << AtomicMassUnc << ";           " << "/**< \f$ \f$ Uncertainty in atomic mass of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in amu. */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "Neutrons = ") << std::right << std::setw(spacePad) << isotope.N <<                                             ";           " << "/**< \\f$ N \\f$ Neutrons in " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "Protons = ") << std::right << std::setw(spacePad) << isotope.Z <<                                              ";           " << "/**< \\f$ Z \\f$ Protons in " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_INT    " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "MassNumber = ") << std::right << std::setw(spacePad) << isotope.A <<                                           ";           " << "/**< \\f$ A \\f$ Mass number of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << ". */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "MassExc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.MassExc <<             ";           " << "/**< \\f$ ME (keV) \\f$ Mass excess of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "MassExcUnc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.MassExcUnc <<       ";           " << "/**< \\f$ \\Delta ME\\ (keV) \\f$ Uncertainty in mass excess of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "BindEPerA = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.BindEPerA <<         ";           " << "/**< \\f$ BE/A\\ (keV) \\f$ Binding energy per nucleon of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "BindEPerAUnc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << isotope.BindEPerAUnc <<   ";           " << "/**< \\f$ \\Delta BE/A\\ (keV) \\f$ Uncertainty in binding energy per A of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in keV. */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicMass = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << AtomicMass <<               ";           " << "/**< \\f$ m_a\\ (u) \\f$ Atomic mass of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in unified atomic mass units. */" << std::endl;
+        file << std::left << std::setw(constPad) << "   ISOTOPECONST_DOUBLE " << std::setw(namePad) << (constName + std::to_string(isotope.A) + "AtomicMassUnc = ") << std::right << std::setw(spacePad) << std::setprecision(perc) << AtomicMassUnc <<         ";           " << "/**< \\f$ \\Delta m_a\\ (u) \\f$ Uncertainty in atomic mass of " << atomicNameSymbols[isotope.Z].first << "-" << isotope.A << " in unified atomic mass units. */" << std::endl;
 
     }
 

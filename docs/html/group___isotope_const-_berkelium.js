@@ -1,0 +1,25 @@
+var group___isotope_const__berkelium =
+[
+    [ "Berkelium 233", "group___isotope_const-_berkelium-_bk233.html", "group___isotope_const-_berkelium-_bk233" ],
+    [ "Berkelium 234", "group___isotope_const-_berkelium-_bk234.html", "group___isotope_const-_berkelium-_bk234" ],
+    [ "Berkelium 235", "group___isotope_const-_berkelium-_bk235.html", "group___isotope_const-_berkelium-_bk235" ],
+    [ "Berkelium 236", "group___isotope_const-_berkelium-_bk236.html", "group___isotope_const-_berkelium-_bk236" ],
+    [ "Berkelium 237", "group___isotope_const-_berkelium-_bk237.html", "group___isotope_const-_berkelium-_bk237" ],
+    [ "Berkelium 238", "group___isotope_const-_berkelium-_bk238.html", "group___isotope_const-_berkelium-_bk238" ],
+    [ "Berkelium 239", "group___isotope_const-_berkelium-_bk239.html", "group___isotope_const-_berkelium-_bk239" ],
+    [ "Berkelium 240", "group___isotope_const-_berkelium-_bk240.html", "group___isotope_const-_berkelium-_bk240" ],
+    [ "Berkelium 241", "group___isotope_const-_berkelium-_bk241.html", "group___isotope_const-_berkelium-_bk241" ],
+    [ "Berkelium 242", "group___isotope_const-_berkelium-_bk242.html", "group___isotope_const-_berkelium-_bk242" ],
+    [ "Berkelium 243", "group___isotope_const-_berkelium-_bk243.html", "group___isotope_const-_berkelium-_bk243" ],
+    [ "Berkelium 244", "group___isotope_const-_berkelium-_bk244.html", "group___isotope_const-_berkelium-_bk244" ],
+    [ "Berkelium 245", "group___isotope_const-_berkelium-_bk245.html", "group___isotope_const-_berkelium-_bk245" ],
+    [ "Berkelium 246", "group___isotope_const-_berkelium-_bk246.html", "group___isotope_const-_berkelium-_bk246" ],
+    [ "Berkelium 247", "group___isotope_const-_berkelium-_bk247.html", "group___isotope_const-_berkelium-_bk247" ],
+    [ "Berkelium 248", "group___isotope_const-_berkelium-_bk248.html", "group___isotope_const-_berkelium-_bk248" ],
+    [ "Berkelium 249", "group___isotope_const-_berkelium-_bk249.html", "group___isotope_const-_berkelium-_bk249" ],
+    [ "Berkelium 250", "group___isotope_const-_berkelium-_bk250.html", "group___isotope_const-_berkelium-_bk250" ],
+    [ "Berkelium 251", "group___isotope_const-_berkelium-_bk251.html", "group___isotope_const-_berkelium-_bk251" ],
+    [ "Berkelium 252", "group___isotope_const-_berkelium-_bk252.html", "group___isotope_const-_berkelium-_bk252" ],
+    [ "Berkelium 253", "group___isotope_const-_berkelium-_bk253.html", "group___isotope_const-_berkelium-_bk253" ],
+    [ "Berkelium 254", "group___isotope_const-_berkelium-_bk254.html", "group___isotope_const-_berkelium-_bk254" ]
+];

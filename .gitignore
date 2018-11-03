@@ -3,6 +3,10 @@
 /project/vs2017/Debug
 /project/vs2017/Release
 
+# Latex
+*.tex
+*.aux
+
 # Prerequisites
 *.d
 

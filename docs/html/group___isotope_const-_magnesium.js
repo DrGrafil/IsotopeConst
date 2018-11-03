@@ -1,0 +1,25 @@
+var group___isotope_const__magnesium =
+[
+    [ "Magnesium 19", "group___isotope_const-_magnesium-_mg19.html", "group___isotope_const-_magnesium-_mg19" ],
+    [ "Magnesium 20", "group___isotope_const-_magnesium-_mg20.html", "group___isotope_const-_magnesium-_mg20" ],
+    [ "Magnesium 21", "group___isotope_const-_magnesium-_mg21.html", "group___isotope_const-_magnesium-_mg21" ],
+    [ "Magnesium 22", "group___isotope_const-_magnesium-_mg22.html", "group___isotope_const-_magnesium-_mg22" ],
+    [ "Magnesium 23", "group___isotope_const-_magnesium-_mg23.html", "group___isotope_const-_magnesium-_mg23" ],
+    [ "Magnesium 24", "group___isotope_const-_magnesium-_mg24.html", "group___isotope_const-_magnesium-_mg24" ],
+    [ "Magnesium 25", "group___isotope_const-_magnesium-_mg25.html", "group___isotope_const-_magnesium-_mg25" ],
+    [ "Magnesium 26", "group___isotope_const-_magnesium-_mg26.html", "group___isotope_const-_magnesium-_mg26" ],
+    [ "Magnesium 27", "group___isotope_const-_magnesium-_mg27.html", "group___isotope_const-_magnesium-_mg27" ],
+    [ "Magnesium 28", "group___isotope_const-_magnesium-_mg28.html", "group___isotope_const-_magnesium-_mg28" ],
+    [ "Magnesium 29", "group___isotope_const-_magnesium-_mg29.html", "group___isotope_const-_magnesium-_mg29" ],
+    [ "Magnesium 30", "group___isotope_const-_magnesium-_mg30.html", "group___isotope_const-_magnesium-_mg30" ],
+    [ "Magnesium 31", "group___isotope_const-_magnesium-_mg31.html", "group___isotope_const-_magnesium-_mg31" ],
+    [ "Magnesium 32", "group___isotope_const-_magnesium-_mg32.html", "group___isotope_const-_magnesium-_mg32" ],
+    [ "Magnesium 33", "group___isotope_const-_magnesium-_mg33.html", "group___isotope_const-_magnesium-_mg33" ],
+    [ "Magnesium 34", "group___isotope_const-_magnesium-_mg34.html", "group___isotope_const-_magnesium-_mg34" ],
+    [ "Magnesium 35", "group___isotope_const-_magnesium-_mg35.html", "group___isotope_const-_magnesium-_mg35" ],
+    [ "Magnesium 36", "group___isotope_const-_magnesium-_mg36.html", "group___isotope_const-_magnesium-_mg36" ],
+    [ "Magnesium 37", "group___isotope_const-_magnesium-_mg37.html", "group___isotope_const-_magnesium-_mg37" ],
+    [ "Magnesium 38", "group___isotope_const-_magnesium-_mg38.html", "group___isotope_const-_magnesium-_mg38" ],
+    [ "Magnesium 39", "group___isotope_const-_magnesium-_mg39.html", "group___isotope_const-_magnesium-_mg39" ],
+    [ "Magnesium 40", "group___isotope_const-_magnesium-_mg40.html", "group___isotope_const-_magnesium-_mg40" ]
+];

@@ -1,0 +1,25 @@
+var group___isotope_const__curium =
+[
+    [ "Curium 231", "group___isotope_const-_curium-_cm231.html", "group___isotope_const-_curium-_cm231" ],
+    [ "Curium 232", "group___isotope_const-_curium-_cm232.html", "group___isotope_const-_curium-_cm232" ],
+    [ "Curium 233", "group___isotope_const-_curium-_cm233.html", "group___isotope_const-_curium-_cm233" ],
+    [ "Curium 234", "group___isotope_const-_curium-_cm234.html", "group___isotope_const-_curium-_cm234" ],
+    [ "Curium 235", "group___isotope_const-_curium-_cm235.html", "group___isotope_const-_curium-_cm235" ],
+    [ "Curium 236", "group___isotope_const-_curium-_cm236.html", "group___isotope_const-_curium-_cm236" ],
+    [ "Curium 237", "group___isotope_const-_curium-_cm237.html", "group___isotope_const-_curium-_cm237" ],
+    [ "Curium 238", "group___isotope_const-_curium-_cm238.html", "group___isotope_const-_curium-_cm238" ],
+    [ "Curium 239", "group___isotope_const-_curium-_cm239.html", "group___isotope_const-_curium-_cm239" ],
+    [ "Curium 240", "group___isotope_const-_curium-_cm240.html", "group___isotope_const-_curium-_cm240" ],
+    [ "Curium 241", "group___isotope_const-_curium-_cm241.html", "group___isotope_const-_curium-_cm241" ],
+    [ "Curium 242", "group___isotope_const-_curium-_cm242.html", "group___isotope_const-_curium-_cm242" ],
+    [ "Curium 243", "group___isotope_const-_curium-_cm243.html", "group___isotope_const-_curium-_cm243" ],
+    [ "Curium 244", "group___isotope_const-_curium-_cm244.html", "group___isotope_const-_curium-_cm244" ],
+    [ "Curium 245", "group___isotope_const-_curium-_cm245.html", "group___isotope_const-_curium-_cm245" ],
+    [ "Curium 246", "group___isotope_const-_curium-_cm246.html", "group___isotope_const-_curium-_cm246" ],
+    [ "Curium 247", "group___isotope_const-_curium-_cm247.html", "group___isotope_const-_curium-_cm247" ],
+    [ "Curium 248", "group___isotope_const-_curium-_cm248.html", "group___isotope_const-_curium-_cm248" ],
+    [ "Curium 249", "group___isotope_const-_curium-_cm249.html", "group___isotope_const-_curium-_cm249" ],
+    [ "Curium 250", "group___isotope_const-_curium-_cm250.html", "group___isotope_const-_curium-_cm250" ],
+    [ "Curium 251", "group___isotope_const-_curium-_cm251.html", "group___isotope_const-_curium-_cm251" ],
+    [ "Curium 252", "group___isotope_const-_curium-_cm252.html", "group___isotope_const-_curium-_cm252" ]
+];

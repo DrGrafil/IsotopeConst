@@ -7,7 +7,7 @@ This constant library is primarially made for people who want to rapidly do some
 The constants are compiled from the [Atomic Mass Evaluation - AME2016](https://www-nds.iaea.org/amdc/ame2016/mass16.txt). The header file and resulting documentation is generated from this file. The constant library has data on neutron count, proton count, mass number, atomic mass, mass excess and binding energey per nucleon for all known isotopes of elements upto and including Oganesson (element 119).
 
 ## Documentation
-All constants are fully documented. You can read the documentation [HERE](https://metex.github.io/IsotopeConst/html/modules.html). If you prefer a pdf it can be found [HERE](https://github.com/Metex/IsotopeConst/docs/latex/refman.pdf).  
+All constants are fully documented. You can read the documentation [HERE](https://metex.github.io/IsotopeConst/html/modules.html). If you prefer a pdf it can be found [HERE](https://github.com/Metex/IsotopeConst/blob/master/docs/latex/refman.pdf).  
 
 ## Setup
 IsotopeConst is a header-only library, and therfore does not need to be compiled. All that needs to be done is copy the IsotopeConst folder to your include directories and add `#include "IsotopeConst/IsotopeConst.hpp"`. 

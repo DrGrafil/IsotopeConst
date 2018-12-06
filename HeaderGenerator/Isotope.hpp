@@ -1,7 +1,7 @@
 /// @file HeaderGenerator.hpp
 ///
 /// @brief Contains Isotope Structure
-/// @author Elliot Grafil (Metex)
+/// @author Elliot Grafil 
 /// @date 11/1/2018
 
 

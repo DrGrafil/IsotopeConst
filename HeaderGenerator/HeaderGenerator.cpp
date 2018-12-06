@@ -92,7 +92,7 @@ namespace IsotopeConst
         file << "///" << std::endl;
         file << "/// See https://doi.org/10.1088/1674-1137/41/3/030003" << std::endl;
         file << "///" << std::endl;
-        file << "/// @author Elliot Grafil (Metex)" << std::endl;
+        file << "/// @author Elliot Grafil " << std::endl;
         file << "/// @date 11/1/18" << std::endl;
         file << "/// @version 1.0.1" << std::endl;
         file << std::endl;

@@ -1,7 +1,7 @@
 /// @file IsotopeDataParser.hpp
 ///
 /// @brief All functions used to parse the isotope data.
-/// @author Elliot Grafil (Metex)
+/// @author Elliot Grafil 
 /// @date 11/1/2018
 
 

@@ -1,7 +1,7 @@
 /// @file HeaderGenerator.hpp
 ///
 /// @brief Generates all the IsotopeConst Header File.
-/// @author Elliot Grafil (Metex)
+/// @author Elliot Grafil 
 /// @date 11/1/2018
 
 

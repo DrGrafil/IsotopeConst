@@ -1,7 +1,7 @@
 /// @file StringManipulators.hpp
 ///
 /// @brief Useful string manipulators
-/// @author Elliot Grafil (Metex)
+/// @author Elliot Grafil 
 /// @date 11/1/2018
 
 
